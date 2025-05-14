@@ -104,6 +104,17 @@ public class Principal {
 
                 }
 
+                    if (!historial.vacio()) {
+                        System.out.println("¿Quieres borrar el historial? (SI/NO)");
+                        String resp = teclado.next().trim().toUpperCase();
+                        if (resp.equals("SI")) {
+                            historial.vaciarHistorial();
+                        } else {
+                            System.out.println("El historial se ha mantenido");
+                        }
+                    }
+                    continue;
+                }
                 default -> {
                         System.out.println("Opción inválida. Intentalo de nuevo por favor.");
                         continue;
