@@ -5,6 +5,7 @@ public class Principal {
         Scanner teclado = new Scanner(System.in);
         ConsultarTasa consulta = new ConsultarTasa();
         ComprobarMonedas comprobar = new ComprobarMonedas();
+        HistorialDeCambios historial = new HistorialDeCambios();
 
         while (true) {
             System.out.println("\n*****************************************\n");
@@ -17,9 +18,11 @@ public class Principal {
                     4 - Dolar Estadounidense(USD)               ->   Peso Colombiano(COP).
                     5 - Real Brasileño(BRL)                     ->   Dolar Estadounidense(USD).
                     6 - Dolar Estadounidense(USD)               ->   Real Brasileño(BRL).
-                    7 - Hacer otra conversión.
                     
-                        Escriba cero (0) escriba salir para finalizar el progrma.
+                    7 - Hacer otra conversión.
+                    8 - Mostrar historial de conversiones.
+                    
+                        Escriba cero (0) o escribe salir (SALIR) para finalizar el programa.
                     """);
 
             String opcion = teclado.next();
@@ -38,10 +41,10 @@ public class Principal {
                 case "1" -> {
                     System.out.println("""
                                                   **   Nota   **
-                                El Bolivar Soberano experimente un mayor volatilidad
-                            debido a las diferencias entre el tipo de cambio de 
+                                El Bolivar Soberano experimenta una mayor volatilidad
+                            debido a las diferencias entre el tipo de cambio de
                             diferentes mercados y el tipo de cambio oficial. En este
-                            caso se aplicaran el tipo de cambio publicado por el 
+                            caso se aplicarán el tipo de cambio publicado por el
                             banco central correspondiente. Los resultados mostrados
                             en nuestro conversor podrían ser diferentes al de otras
                             fuentes.
@@ -52,10 +55,10 @@ public class Principal {
                 case "2" -> {
                     System.out.println("""
                                                   **   Nota   **
-                                El Bolivar Soberano experimente un mayor volatilidad
-                            debido a las diferencias entre el tipo de cambio de 
+                                El Bolivar Soberano experimenta una mayor volatilidad
+                            debido a las diferencias entre el tipo de cambio de
                             diferentes mercados y el tipo de cambio oficial. En este
-                            caso se aplicaran el tipo de cambio publicado por el 
+                            caso se aplicarán el tipo de cambio publicado por el
                             banco central correspondiente. Los resultados mostrados
                             en nuestro conversor podrían ser diferentes al de otras
                             fuentes.
@@ -98,11 +101,11 @@ public class Principal {
                         } else {
                             System.out.println("Respuesta inválida. Intentalo de nuevo por favor.");
                         }
-
                         continue;
                     }
-
                 }
+                case "8" -> {
+                    historial.verHistorial();
 
                     if (!historial.vacio()) {
                         System.out.println("¿Quieres borrar el historial? (SI/NO)");
