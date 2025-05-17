@@ -1,31 +1,31 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class HistorialConversiones {
-    private final List<Tasa> historial = new ArrayList<>();
+public class HistorialDeCambios {
+    private List<Tasa> historial = new ArrayList<>();
 
-    public void agregarConversion(Tasa conversion) {
-        historial.add(conversion);
+    public void agregarCambio (Tasa cambio) {
+        historial.add(cambio);
     }
 
-    public void mostrarHistorial() {
+    public void verHistorial () {
         if (historial.isEmpty()) {
-            System.out.println("📭 No hay conversiones en el historial.");
+            System.out.println("Aún no se ha realizado ninguna conversión.");
             return;
         }
 
-        System.out.println("\n📜 Historial de Conversiones:");
-        for (Tasa conversion : historial) {
-            System.out.println(" • " + conversion);
+        System.out.println("\nConversiones realizadas:");
+        for (Tasa cambio : historial) {
+            System.out.println(" • " + cambio);
         }
     }
 
-    public void limpiarHistorial() {
+    public  void vaciarHistorial () {
         historial.clear();
-        System.out.println("✅ Historial borrado correctamente.");
+        System.out.println("Historial vaciado correctamente");
     }
 
-    public boolean estaVacio() {
+    public boolean vacio () {
         return historial.isEmpty();
     }
 }
