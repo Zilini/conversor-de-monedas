@@ -113,7 +113,7 @@ public class Principal {
                         if (resp.equals("SI")) {
                             historial.vaciarHistorial();
                         } else {
-                            System.out.println("El historial se ha mantenido");
+                            System.out.println("El historial se ha mantenido.");
                         }
                     }
                     continue;
@@ -138,6 +138,7 @@ public class Principal {
             try {
                 Tasa resultado = consulta.buscarTasa(monedaBase, monedaDestino, cantidad);
                 System.out.println(resultado);
+                historial.agregarCambio(resultado);
             } catch (Exception e) {
                 System.out.println("Error inesperado: " + e.getMessage());
             }

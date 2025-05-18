@@ -3,9 +3,15 @@ import java.util.List;
 
 public class HistorialDeCambios {
     private List<Tasa> historial = new ArrayList<>();
+    private CreaArchivoHistorial json = new CreaArchivoHistorial();
 
     public void agregarCambio (Tasa cambio) {
         historial.add(cambio);
+    }
+
+    public void agregarConversion (Tasa conversion) {
+        historial.add(conversion);
+        json.guardarHistorial(historial);
     }
 
     public void verHistorial () {
@@ -23,6 +29,7 @@ public class HistorialDeCambios {
     public  void vaciarHistorial () {
         historial.clear();
         System.out.println("Historial vaciado correctamente");
+        json.guardarHistorial(historial);
     }
 
     public boolean vacio () {

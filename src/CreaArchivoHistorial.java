@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreaArchivoHisyorial {
+public class CreaArchivoHistorial {
 
     private  String archivo = "historial.json";
     private Gson gson  = new GsonBuilder().setPrettyPrinting().create();
